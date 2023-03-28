@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SearchForm from "../../components/searchForm";
 
 describe("SearchForm", () => {
@@ -19,5 +19,18 @@ describe("SearchForm", () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("button displays the correct text", () => {
+    render(
+      <SearchForm
+        searchText={validProps.searchText}
+        setSearchText={validProps.searchText}
+        onSubmit={validProps.onSubmit}
+      />
+    );
+    const button = screen.getByRole("button", { name: /search/i });
+
+    expect(button).toBeInTheDocument();
   });
 });
