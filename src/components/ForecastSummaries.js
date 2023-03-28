@@ -12,7 +12,7 @@ function ForecastSummaries({ forecasts, onForecastSelect }) {
           description={forecast.description}
           icon={forecast.icon.toString()}
           onSelect={onForecastSelect}
-          temperature={forecast.temperature.max}
+          temperature={forecast.temperature}
         />
       ))}
     </div>
