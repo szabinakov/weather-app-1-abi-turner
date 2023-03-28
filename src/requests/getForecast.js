@@ -1,11 +1,12 @@
-/* eslint-disable-next-line no-console */
+/* eslint-disable no-console */
 import axios from "axios";
 
 const getForecast = (
   searchText,
   setSelectedDate,
   setForecasts,
-  setLocation
+  setLocation,
+  setErrorMessage
 ) => {
   let endpoint = "https://cmd-shift-weather-app.onrender.com/forecast";
 

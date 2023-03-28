@@ -14,7 +14,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    getForecast(setSelectedDate, setForecasts, setLocation);
+    getForecast(setSelectedDate, setForecasts, setLocation, setErrorMessage);
   }, []);
 
   const handleCitySearch = () => {
@@ -47,7 +47,7 @@ function App() {
         setSearchText={setSearchText}
         onSubmit={handleCitySearch}
       />
-      {errorMessage && (
+      {!errorMessage && (
         <>
           <ForecastSummaries
             forecasts={forecasts}
